@@ -2,7 +2,7 @@
   "name": "bsp-table-sort",
   "version": "0.0.1",
   "devDependencies": {
-    "brightspot-base": "perfectsense/brightspot-base#1.0.4",
+    "brightspot-base": "perfectsense/brightspot-base#436b32c1f94b7c0da7fbc4fdf079bda343772add",
     "bsp-grunt": "perfectsense/brightspot-js-grunt#2.1.0",
     "es6-module-loader": "^0.17.3",
     "express": "^4.13.1",

@@ -27,19 +27,19 @@ Then create a table with a structure that looks like:
 			</thead>
 			<tbody>
 				<tr>
-					<td data-value>Ant</td>
-					<td data-value>1</td>
-					<td data-value>January 1, 2015</td>
+					<td>Ant</td>
+					<td>1</td>
+					<td>January 1, 2015</td>
 				</tr>
 				<tr>
-					<td data-value>Bear</td>
-					<td data-value>2</td>
-					<td data-value>January 2, 2015</td>
+					<td>Bear</td>
+					<td>2</td>
+					<td>January 2, 2015</td>
 				</tr>
 				<tr>
-					<td data-value>Cat</td>
-					<td data-value>3</td>
-					<td data-value>January 3, 2015</td>
+					<td>Cat</td>
+					<td>3</td>
+					<td>January 3, 2015</td>
 				</tr>
 			</tbody>
 		</table>

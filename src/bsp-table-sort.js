@@ -4,8 +4,17 @@ export default class TableSort {
 	constructor($el, options) {
 		this.$el = $el;
 		this.options = $.extend(true, {}, this.defaults, options);
+		this.addIndexes();
 		this.assignEvents();
 		this.$el.data('table-sort', this);
+	}
+	addIndexes() {
+		var self = this;
+		this.$el.find('tr').each((key, tr) => {
+			$(tr).find('td, th').each((tdKey, td) => {
+				$(td).attr('data-' + self.options.dataAttrColIndex, tdKey);
+			});
+		});
 	}
 	assignEvents() {
 		var self = this;
@@ -26,21 +35,23 @@ export default class TableSort {
 		var $sortLink = $(sortLink);
 		var $sortLinks = this.$el.find('[data-'+this.options.dataAttrSortType+']');
 		var asc = this.options.classAsc;
-		var columnIndex = $sortLink.data(this.options.dataAttrColIndex);
+		var columnIndex = $sortLink.closest('th').data(this.options.dataAttrColIndex);
 		var desc = this.options.classDesc;
 		var self = this;
 		var sortType = $sortLink.data(this.options.dataAttrSortType);
 		var order = [];
 		var rows = [];
-		var direction = asc;
-
-		if ($sortLink.hasClass(asc)) {
-			direction = desc;
+		var direction = desc;
+		if ($sortLink.hasClass(desc)) {
+			direction = asc;
 		}
 
 		$tbody.find('tr').each((key, row) => {
 			var $cell = $( $(row).find('td').get(columnIndex) );
-			var rawValue = $cell.find(self.options.selectorValue).html();
+			var rawValue = $cell.data(self.options.dataValueAttr);
+			if (!rawValue) {
+				rawValue = $cell.html();
+			}
 			rows.push({
 				key: key,
 				html: row,
@@ -95,7 +106,7 @@ export default class TableSort {
 TableSort.prototype.defaults = {
 	classAsc : 'asc',
 	classDesc : 'desc',
-	dataAttrColIndex : 'column-index',
+	dataAttrColIndex : 'table-sort-column-index',
 	dataAttrSortType : 'sort-by',
-	selectorValue : '.data-value'
+	dataValueAttr : 'value'
 };

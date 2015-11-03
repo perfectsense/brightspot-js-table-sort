@@ -1,0 +1,1 @@
+import bsp_table_sort_plugin from 'bsp-table-sort-plugin';

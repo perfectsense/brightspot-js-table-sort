@@ -9,9 +9,16 @@
     "jquery": ">=1.7.0",
     "bsp-utils": ">=1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "brightspot-base": "perfectsense/brightspot-base#1.0.4"
+  },
   "homepage": "https://github.com/perfectsense/brightspot-js-table-sort",
-  "ignore": ["demo","Gruntfile.js","package.json",".gitignore"],
+  "ignore": [
+    "demo",
+    "Gruntfile.js",
+    "package.json",
+    ".gitignore"
+  ],
   "keywords": [
     "brightspot",
     "jquery"
